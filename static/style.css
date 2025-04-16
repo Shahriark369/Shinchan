@@ -90,19 +90,46 @@ button:hover::before {
     gap: 1.5rem;
     margin-top: 2rem;
   }
-  
-  .video-card {
-    background: linear-gradient(145deg, #1e3c72, #2a5298);
-    padding: 1rem;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.2s ease;
-  }
-  
-  .video-card:hover {
-    transform: scale(1.05);
-  }
-  
+
+ .video-card {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #111;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+ .video-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+  background-size: 400% 400%;
+  z-index: -1;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: rgb-border 5s linear infinite;
+}
+
+ .video-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes rgb-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
   .video-title {
     font-size: 1.1rem;
     font-weight: bold;
