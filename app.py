@@ -22,5 +22,9 @@ def watch(video_id):
         return render_template('watch.html', video=videos[video_id], video_id=video_id)
     return "Video not found", 404
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml')
+
 if __name__ == '__main__':
     app.run(debug=True)
