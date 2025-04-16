@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎬Shinchan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 Watch Shinchan All Episodes</h1>
+    <form method="GET" action="/">
+      <input type="text" name="q" placeholder="Search shinchan..." value="{{ query }}">
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="video-list">
+      {% for video in videos %}
+        <div class="video-card">
+          <a href="{{ url_for('watch', video_id=loop.index0) }}">
+            <div class="video-title">{{ video.title }}</div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>    
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Shinchan Website | Created by [Nikola Tesla Fan]</p>
+      <p class="tagline">"The Ultimate Destination for Shinchan Fans — All Episodes, All Fun!"</p>
+    </div>
+  </footer>  
+</body>
+</html>

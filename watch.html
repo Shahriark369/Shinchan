@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ video.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <a href="{{ url_for('index') }}" class="back-link">←Home</a>
+    <h1>{{ video.title }}</h1>
+    <div class="video-player">
+      <iframe src="{{ video.drive_url }}" width="100%" height="480" allow="autoplay" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>
