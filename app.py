@@ -24,7 +24,21 @@ def watch(video_id):
 
 @app.route('/sitemap.xml')
 def sitemap():
-    return send_from_directory('.', 'sitemap.xml')
+    sitemap_xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://shinchan-4wfq.onrender.com/</loc></url>
+  <url><loc>https://shinchan-4wfq.onrender.com/episode-1</loc></url>
+  <url><loc>https://shinchan-4wfq.onrender.com/episode-2</loc></url>
+  <url><loc>https://shinchan-4wfq.onrender.com/episode-3</loc></url>
+  <url><loc>https://shinchan-4wfq.onrender.com/episode-4</loc></url>
+  <url><loc>https://shinchan-4wfq.onrender.com/episode-5</loc></url>
+  <!-- Add more episodes as needed -->
+</urlset>'''
+    return Response(sitemap_xml, mimetype='application/xml')
+
+@app.route('/googleXXXXXX12345abcdef.html')
+def google_verification():
+    return '''google-site-verification: googleXXXXXX12345abcdef.html'''
 
 if __name__ == '__main__':
     app.run(debug=True)
