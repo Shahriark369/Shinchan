@@ -93,6 +93,7 @@ button:hover::before {
 
  .video-card {
   text-decoration: none;
+  text-align: center;
   padding: 12px 24px;
   font-size: 16px;
   background: #111;
